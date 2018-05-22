@@ -181,15 +181,6 @@ Parser.prototype._compile = function () {
   Row('}')
 
   this._Row = Row.toFunction()
-
-  if (Object.defineProperty) {
-    Object.defineProperty(this._Row.prototype, 'headers', {
-      enumerable: false,
-      value: this.headers
-    })
-  } else {
-    this._Row.prototype.headers = this.headers
-  }
 }
 
 Parser.prototype._emit = function (Row, cells) {
